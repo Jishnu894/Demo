@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.use(express.json());
 
@@ -14,7 +14,7 @@ let users = [
 
 app.get('/', (req, res) => {
   res.send('Server is running 🚀');
-});
+})
 
 
 app.put('/user', (req, res) => {
@@ -34,7 +34,7 @@ app.put('/user', (req, res) => {
   }
 });
 
-app.delete('/user', (req, res) => {
+app.delete('/users', (req, res) => {
   const { email } = req.body;
 
   if (!email) {
